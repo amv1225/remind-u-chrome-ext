@@ -56,26 +56,26 @@ function timeChecker() {
     if (hours === 20 && minutes === 45) {
         document.getElementById("rand_reminder").innerHTML = "Test Case Up";
     }
-    if (hours === 9 && minutes === 0) {
+    if (hours === 9) {
         document.getElementById("rand_reminder").innerHTML = "Have you woken up yet?";
-    } else if (hours === 10 && minutes === 0) {
+    } else if (hours === 10) {
         document.getElementById("rand_reminder").innerHTML = "Have you eaten yet?";
-    } else if (hours === 11 && minutes === 0) {
+    } else if (hours === 11) {
         document.getElementById("rand_reminder").innerHTML = "Remember to take a break!";
-    } else if (hours === 12 && minutes === 0) {
+    } else if (hours === 12) {
         let msg = getMessage();
         if (msg === "Would you like to set a reminder?: ") {
             document.getElementById("rand_reminder").innerHTML = msg;
         } else {
             document.getElementById("rand_reminder").innerHTML = msg;
         }
-    } else if (hours === 13 && minutes === 0) {
+    } else if (hours === 13 && minutes < 30) {
         console.log("Have you eaten yet? If you haven't, eat!");
-    } else if (hours === 13 && minutes === 30) {
+    } else if (hours === 13) {
         console.log("Remember to stay hydrated!");
-    } else if (hours === 14 && minutes === 0) {
+    } else if (hours === 14) {
         console.log("It's good to take breaks every once in a while!");
-    } else if (hours === 15 && minutes === 0) {
+    } else if (hours === 15 && minutes < 30) {
         let msg = getMessage();
         console.log(msg);
         if (msg === "Would you like to set a reminder?: ") {
@@ -84,19 +84,19 @@ function timeChecker() {
 
             }
         }
-    } else if (hours === 15 && minutes === 30) {
+    } else if (hours === 15 && minutes >== 30) {
         console.log("Remember to stay hydrated!")
-    } else if (hours === 16 && minutes === 0) {
+    } else if (hours === 16 && minutes < 30) {
         let msg = getMessage();
         console.log(msg);
         if (msg === "Would you like to set a reminder?: ") {
 
         }
-    } else if (hours === 16 && minutes === 30) {
+    } else if (hours === 16 || (hours === 17 && minutes < 15){
         console.log("Have you eaten yet? If you haven't, eat!");
-    } else if (hours === 17 && minutes === 15) {
+    } else if (hours === 17) {
         console.log("Remember to take a break!");
-    } else if (hours === 18 && minutes === 0) {
+    } else if (hours === 18 && minutes < 30) {
         let msg = getMessage();
         console.log(msg);
         if (msg === "Would you like to set a reminder?: ") {
@@ -105,11 +105,11 @@ function timeChecker() {
 
             }
         }
-    } else if (hours === 18 && minutes === 30) {
+    } else if (hours === 18 || (hours === 19 && minutes < 30)) {
         console.log("Remember to stay hydrated!");
-    } else if (hours === 19 && minutes === 30) {
+    } else if (hours === 19 || (hours === 20 && minutes < 30)) {
         console.log("Have you eaten yet? Remember to eat");
-    } else if (hours === 20 && minutes === 30) {
+    } else if (hours === 20 || (hours === 21 && minutes < 30)) {
         let msg = getMessage();
         console.log(msg);
         if (msg === "Would you like to set a reminder?: ") {
@@ -118,9 +118,9 @@ function timeChecker() {
 
             }
         }
-    } else if (hours === 21 && minutes === 30) {
+    } else if (hours === 21) {
         console.log("Remember to stay hydrated");
-    } else if (hours === 22 && minutes === 0) {
+    } else if (hours === 22) {
         let msg = getMessage();
         console.log(msg);
         if (msg === "Would you like to set a reminder?: ") {
@@ -129,10 +129,12 @@ function timeChecker() {
 
             }
         }
-    } else if (hours === 23 && minutes === 0) {
+    } else if (hours === 23) {
         console.log("Remember to take a break sometimes");
-    } else if (hours === 0 && minutes === 0) {
+    } else if (hours === 0 && minutes <== 30) {
         console.log("Its late! Remember to get a good night's sleep!");
+    } else {
+        console.log("Good night!");
     }
 }
 timeChecker();
@@ -152,10 +154,3 @@ function getMessage() {
     let i = getRandomInt(messages.length);
     return messages[i];
 }
-
-
-
-
-
-
-
